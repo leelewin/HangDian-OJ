@@ -9,7 +9,7 @@
 #include<stdio.h>
 
 #define MAXNUM 10000
-int school[MAXNUM];
+int school[MAXNUM] = {0};
 
 int main(){
     int n;

@@ -9,9 +9,18 @@ getc()   putc()
 
 文件指针:   stdin  stdout  stderr
 fprintf()
+fscanf()
 
+fputs()
+fgets()
 
+int rename(const char *old_name, const char *new_name)
+int remove(const char *filename)
+
+fread()
+fwrite()
 */
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>

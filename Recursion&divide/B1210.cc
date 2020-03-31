@@ -33,6 +33,10 @@ int QuikSelect(int a[], int start, int end, int k){
         else                              //去左半部分查找
             QuikSelect(a, start, index-1, k);
     }
+    else
+        return -1;
+        
+    
 }
 
 int selectKSmall(int a[], int size, int k){
@@ -44,7 +48,7 @@ int selectKSmall(int a[], int size, int k){
 int main(void){
    int a[6] = {3,2,1,5,6,4};
    // int a[9] = {3,2,3,1,2,4,5,5,6}; 
-   cout << selectKSmall(a, 6, 1) << endl;
+   cout << selectKSmall(a, 6, 7) << endl;
 
    return 0;                 //错误返回
 }

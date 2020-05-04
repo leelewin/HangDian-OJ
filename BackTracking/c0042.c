@@ -11,25 +11,30 @@
 bool ok(int k);
 int x[MAXSIZE];
 int n;
+int sum = 0;
 
-bool n_queen(int k){
-    if(k > n)
-        return true;  //注意返回值
+void n_queen(int k){
+    if(k > n){
+        sum++;
+        return ;  //注意返回值
+    }
     else{
         for(int i = 1; i <= n; i++){
             x[k] = i;
-            if(ok(k) == true)
-                if(n_queen(k+1)) return true;
-            x[k+1] = 0;
+            if(ok(k) == true){
+                n_queen(k+1);
+                x[k+1] = 0;
+            }
+            
         }
-        return false;
         
     }
 }
 
 bool ok(int k){
     for(int i = 1; i < k; i++){   //不取等于
-        if(x[k] == x[i] || abs(k - x[k]) == abs(i - x[i]))
+        // if(x[k] == x[i] || abs(k - x[k]) == abs(i - x[i]))  出错
+        if(x[k] == x[i] || abs(k - i) == abs(x[k] - x[i]))
             return false;
     }
     return true;  //注意
@@ -41,6 +46,7 @@ int main(void){
     for(int i = 1; i <= n; i++)
         printf("%d ", x[i]);
 
+    printf("\n%d", sum);  //输出全部的解法
 
     return 0;
 }
